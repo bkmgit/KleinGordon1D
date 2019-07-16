@@ -1,0 +1,2 @@
+rm *.datbin
+rm *.jpg

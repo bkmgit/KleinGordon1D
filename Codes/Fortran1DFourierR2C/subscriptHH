@@ -1,0 +1,12 @@
+#!/bin/bash
+#PBS -N FFT
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=00:5:59             
+##PBS -q test  
+#PBS -m abe
+#PBS -M benson.muite@ut.ee
+# Change to the directory that the job was submitted from
+cd $PBS_O_WORKDIR
+# Launch the parallel job to the allocated compute nodes
+
+aprun -n 1 -N 1 ./kg

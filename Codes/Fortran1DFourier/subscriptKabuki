@@ -1,0 +1,12 @@
+#!/bin/bash
+#PBS -N FFT
+#PBS -b 1
+#PBS -l elapstim_req=01:15:59             
+#PBS -T mpisx  
+#PBS -m abe
+#PBS -M benson.muite@ut.ee
+# Change to the directory that the job was submitted from
+cd /sfs/fs1/ws/xhebmuit-KleinGordon/Fortran2/Fortran1DFourier
+# Launch the parallel job to the allocated compute nodes
+export OMP_NUM_THREADS=1        # use 1 OMP threads
+./kg

@@ -1,0 +1,17 @@
+#define the complier
+COMPILER = sxf03
+# compilation settings, optimization, precision, parallelization
+	FLAGS = -Caopt 
+
+# libraries
+LIBS = -L/SX/opt/mathkeisan/MK4_0_3/lib0/f03 -lfft 
+# source list for main program
+SOURCES =  KgSemiImp1d.f90 initialdata.f90 savedata.f90 getgrid.f90 \
+	   errorcalc.f90 storeold.f90 saveresults.f90 enercalc.f90 \
+           savetimeanderror.f90
+		   
+test: $(SOURCES)
+		${COMPILER} -o kg $(FLAGS) $(SOURCES) $(LIBS)   
+		
+clean:
+	rm kg *.o *.L 
